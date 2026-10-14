@@ -1,0 +1,337 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 30px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.05);
+}
+
+/* Titles */
+.section-title {
+    text-align: left;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 11px;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+.divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 35px 0;
+}
+
+
+/* --- 1. New Products Grid (مربعات متساوية) --- */
+.new-products-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.product-card-top {
+    text-align: center;
+}
+
+.product-card-top img {
+    width: 100%;
+    aspect-ratio: 1 / 1; /* يجعل الصور مربعة تماماً */
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.product-card-top .price {
+    color: #e74c3c;
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.banners-grid-1 {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.banners-grid-1 img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.banners-grid-1 .sub-banners {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.banners-grid-1 .sub-banners img {
+    height: 85px;
+}
+
+/* --- 2. Popular Items (مع تأثير Hover لزر add to cart) --- */
+.popular-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.popular-item {
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #f0f0f0;
+    position: relative;
+}
+
+.popular-item img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: contain;
+    transition: 0.3s;
+}
+
+.popular-item .item-info {
+    margin-top: 8px;
+}
+
+.popular-item .title {
+    font-size: 12px;
+    color: #444;
+    margin-bottom: 3px;
+}
+
+.popular-item .price {
+    font-size: 12px;
+    color: #777;
+}
+
+/* زر Add to Cart يظهر عند الـ Hover */
+.add-to-cart-btn {
+    position: absolute;
+    bottom: 55px;
+    left: 15px;
+    right: 15px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 9px;
+    font-size: 12px;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.popular-item:hover .add-to-cart-btn {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popular-item:hover img {
+    opacity: 0.9;
+}
+
+/* --- 3. Features Icons Row --- */
+.features-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee;
+    padding: 12px 20px;
+    margin-bottom: 30px;
+    background: #fff;
+}
+
+.feature-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #555;
+}
+
+.feature-item img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+}
+
+/* --- 4. Bottom Banners Section --- */
+.bottom-banners-section {
+    margin-top: 20px;
+}
+
+.banners-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.banner-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    background-color: #222;
+}
+
+.banner-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.banner-card:hover img {
+    transform: scale(1.03);
+}
+
+.banner-content {
+    position: absolute;
+    bottom: 12px;
+    left: 12px;
+    color: #fff;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+.banner-content h3 {
+    font-size: 12px;
+    margin-bottom: 2px;
+}
+
+.banner-content p {
+    font-size: 10px;
+    opacity: 0.85;
+}
+
+.banners-grid-2 {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    gap: 15px;
+}
+
+.banner-card.large {
+    position: relative;
+    border-radius: 2px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.yellow-bg {
+    background-color: #f7bc59;
+    padding: 15px;
+    justify-content: space-between;
+}
+
+.yellow-bg .banner-text {
+    max-width: 55%;
+}
+
+.yellow-bg .subtitle {
+    font-size: 9px;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+.yellow-bg h2 {
+    font-size: 18px;
+    margin: 4px 0;
+    color: #222;
+}
+
+.yellow-bg p {
+    font-size: 10px;
+    color: #444;
+    margin-bottom: 10px;
+}
+
+.banner-btn {
+    display: inline-block;
+    padding: 5px 12px;
+    background: transparent;
+    border: 1px solid #333;
+    color: #333;
+    font-size: 10px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.banner-btn:hover {
+    background: #333;
+    color: #fff;
+}
+
+.yellow-bg img {
+    width: 35%;
+    height: 150px;
+    object-fit: contain;
+}
+
+.banner-card.large.image-bg img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.banner-card.large.image-bg .banner-text {
+    position: absolute;
+    left: 20px;
+    color: #fff;
+    max-width: 50%;
+    text-align: left;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.8);
+}
+
+.image-bg .subtitle {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+.image-bg h2 {
+    font-size: 18px;
+    margin: 4px 0;
+}
+
+.image-bg p {
+    font-size: 10px;
+    opacity: 0.85;
+    margin-bottom: 10px;
+}
+
+.green-btn {
+    background-color: #16a085;
+    border: none;
+    color: #fff;
+}
+
+.green-btn:hover {
+    background-color: #117a65;
+}
